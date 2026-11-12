@@ -13,6 +13,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:contentDescription="@string/app_name"
         app:srcCompat="@drawable/login_main"
         app:tint="?android:attr/textColorPrimary"/>
 
@@ -46,6 +47,7 @@
             android:id="@+id/textInputEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
             android:background="#00000000"/>
 
 
@@ -69,6 +71,7 @@
             android:id="@+id/textInputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textPassword"
             android:background="#00000000"/>
 
 
