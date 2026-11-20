@@ -13,6 +13,12 @@
         android:theme="@style/Theme.WorldNews"
         tools:targetApi="31">
 
+        <!-- HomeActivity: sarà avviata al termine della scelta categorie-->
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:exported="false" />
+
+        <!-- Schermata iniziale -->
         <activity
             android:name=".ui.welcome.WelcomeActivity"
             android:exported="true">
@@ -21,6 +27,7 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
     </application>

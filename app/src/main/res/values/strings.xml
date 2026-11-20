@@ -27,5 +27,19 @@
     <string name="business">Business</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--aggiungo le stringhe dei nome di nazioni e categorie per utilizzarle in Constants.java -->
+    <!-- Countries -->
+    <string name="countries_france">France</string>
+    <string name="countries_italy">Italy</string>
+    <string name="countries_germany">Germany</string>
+    <string name="countries_spain">Spain</string>
+    <string name="countries_unitedkingdom">United Kingdom</string>
+
+    <!-- Categories -->
+    <string name="category_business">Business</string>
+    <string name="category_entertainment">Entertainment</string>
+    <string name="category_general">General</string>
+    <string name="category_science">Science</string>
+    <string name="category_technology">Technology</string>
 
 </resources>
