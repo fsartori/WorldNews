@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.fragment.PreferenceNewsFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<!-- A differenza della GridView, la RecyclerView separa esplicitamente tre responsabilità: Nel nostro caso utilizzeremo il LinearLayoutManager con orientamento verticale.-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+        android:padding="@dimen/margin_medium" />
 
 </FrameLayout>

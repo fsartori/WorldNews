@@ -41,6 +41,13 @@ dependencies {
     val nav_version = "2.10.2"
     implementation("androidx.navigation:navigation-fragment:${nav_version}")
     implementation("androidx.navigation:navigation-ui:${nav_version}")
+    // Esercitazione 7 - Deserializzazione JSON
+    implementation("com.google.code.gson:gson:2.11.0")
+
+    // Esercitazione 7 - Database Room
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:${room_version}")
+    annotationProcessor("androidx.room:room-compiler:${room_version}")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

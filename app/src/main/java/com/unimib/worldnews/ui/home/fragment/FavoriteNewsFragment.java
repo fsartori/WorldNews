@@ -4,47 +4,61 @@ package com.unimib.worldnews.ui.home.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.unimib.worldnews.R;
+import com.unimib.worldnews.adapter.ArticleRecyclerAdapter;
+import com.unimib.worldnews.database.ArticleRoomDatabase;
+import com.unimib.worldnews.model.Article;
 
+import java.util.List;
+/*
+Rispetto a PreferenceNewsFragment, questo Fragment è molto più semplice: non deve leggere il file JSON né inserire articoli nel database. Deve soltanto recuperare quelli per cui l'attributo liked vale true.
+
+Riutilizzeremo il DAO, l'Adapter, il ViewHolder e il layout card_article.xml.
+ */
 public class FavoriteNewsFragment extends Fragment {
-
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    private String mParam1;
-    private String mParam2;
 
     public FavoriteNewsFragment() {
         // Required empty public constructor
     }
 
-    public static FavoriteNewsFragment newInstance(String param1, String param2) {
-        FavoriteNewsFragment fragment = new FavoriteNewsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_favorite_news, container, false);
+
+        View view = inflater.inflate(
+                R.layout.fragment_favorite_news,
+                container, false);
+
+        RecyclerView recyclerView =
+                view.findViewById(R.id.recyclerView);
+
+        recyclerView.setLayoutManager(
+                new LinearLayoutManager(view.getContext()));
+
+        List<Article> articleList =
+                ArticleRoomDatabase.getDatabase(getContext())
+                        .newsDao().getLiked();
+
+        ArticleRecyclerAdapter adapter =
+                new ArticleRecyclerAdapter(
+                        R.layout.card_article,
+                        articleList, false); //false nasconde il cuore nella schermata dei preferiti: non possiamo rimuovere un articolo dai preferiti direttamente dal FavoriteNewsFragment
+
+        recyclerView.setAdapter(adapter);
+
+        return view;
     }
 }
-

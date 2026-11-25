@@ -41,5 +41,12 @@
     <string name="category_general">General</string>
     <string name="category_science">Science</string>
     <string name="category_technology">Technology</string>
+    <string name="article_menu">Article options</string>
+
+    <!-- Esercitazione 7: etichette della BottomNavigationView -->
+    <string name="preferences">Preferences</string>
+    <string name="popular">Popular</string>
+    <string name="search">Search</string>
+    <string name="favorite">Favorite</string>
 
 </resources>

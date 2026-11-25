@@ -14,15 +14,29 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:navGraph="@navigation/home_nav_graph"
         tools:layout_editor_absoluteX="0dp" />
-
+    <!-- Vincolo precedente:
+        app:layout_constraintTop_toTopOf="parent"
+   -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:navGraph="@navigation/home_nav_graph"
+        tools:layout_editor_absoluteX="0dp" />
+<!-- l'attributo visibiltyMode "labeled" permette di visualizzare sempre le etichette delle 4 voci, indipendentemente da quella selezionata; -->
+    <!-- possibili valori "labeled", "auto", "selected", "unlabeled"-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/home_menu" />
 
     <androidx.appcompat.widget.Toolbar

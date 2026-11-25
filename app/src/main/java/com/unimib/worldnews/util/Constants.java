@@ -49,6 +49,15 @@ public class Constants {
             R.drawable.country_italy, R.drawable.country_germany, R.drawable.country_spain,
             R.drawable.country_unitedkingdom);
     //genera la lista delle countries
+
+    //costanti per l'utilizzo del DB
+    public static final String SAMPLE_JSON_FILENAME =
+            "sample_api_response.json";
+
+    public static final int DATABASE_VERSION = 1;
+
+    public static final String SAVED_ARTICLES_DATABASE =
+            "saved_db";
     public static ArrayList<Country> generateCountryList(Context context) {
         ArrayList<Country> countriesList = new ArrayList<>();
         for (int i = 0; i < COUNTRIES.size(); i++) {

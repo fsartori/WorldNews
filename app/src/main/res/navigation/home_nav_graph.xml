@@ -5,28 +5,55 @@
     android:id="@+id/home_nav_graph"
     app:startDestination="@id/preferenceNewsFragment">
 
+    <!--
+     Modificato android:label per visualizzare
+     il titolo Preferences nella Toolbar.
+     In precedenza era fragment_preference_news.
+-->
+    <!-- Esercitazione 7:
+     Utilizzo di una risorsa stringa condivisa
+     tra Toolbar e BottomNavigationView.
+-->
     <fragment
         android:id="@+id/preferenceNewsFragment"
         android:name="com.unimib.worldnews.ui.home.fragment.PreferenceNewsFragment"
-        android:label="fragment_preference_news"
+        android:label="@string/preferences"
         tools:layout="@layout/fragment_preference_news" />
 
+    <!--<fragment
+        android:id="@+id/preferenceNewsFragment"
+        android:name="com.unimib.worldnews.ui.home.fragment.PreferenceNewsFragment"
+        android:label="Preferences"
+        tools:layout="@layout/fragment_preference_news" />-->
+    <!--
+        Modificato android:label per visualizzare
+        il titolo Popular nella Toolbar.
+        In precedenza era fragment_popular_news.
+   -->
     <fragment
         android:id="@+id/popularNewsFragment"
         android:name="com.unimib.worldnews.ui.home.fragment.PopularNewsFragment"
-        android:label="fragment_popular_news"
+        android:label="@string/popular"
         tools:layout="@layout/fragment_popular_news" />
-
+    <!--
+        Modificato android:label per visualizzare
+        il titolo Search nella Toolbar.
+        In precedenza era fragment_seaarch_news.
+   -->
     <fragment
         android:id="@+id/searchNewsFragment"
         android:name="com.unimib.worldnews.ui.home.fragment.SearchNewsFragment"
-        android:label="fragment_search_news"
+        android:label="@string/search"
         tools:layout="@layout/fragment_search_news" />
-
+    <!--
+        Modificato android:label per visualizzare
+        il titolo Favorite nella Toolbar.
+        In precedenza era fragment_favorite_news.
+   -->
     <fragment
         android:id="@+id/favoriteNewsFragment"
         android:name="com.unimib.worldnews.ui.home.fragment.FavoriteNewsFragment"
-        android:label="fragment_favorite_news"
+        android:label="@string/favorite"
         tools:layout="@layout/fragment_favorite_news" />
 
 </navigation>
