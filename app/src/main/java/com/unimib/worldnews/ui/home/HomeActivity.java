@@ -33,8 +33,9 @@ Vogliamo fare in modo che il titolo della Toolbar cambi automaticamente quando s
 - ActionBar: componente gestito dall'Activity, che offre funzionalità come la gestione del titolo, dei menu e della navigazione.
 Attraverso setSupportActionBar(toolbar) comunichiamo all'Activity che vogliamo utilizzare la nostra Toolbar come ActionBar.
  */
+        // sincornizzazione dei fragment secondo quanto stablito dalla Navigation
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar); //visualizza il nome dell'app nella toolbar
         NavHostFragment navHostFragment = (NavHostFragment)
                 getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
 
